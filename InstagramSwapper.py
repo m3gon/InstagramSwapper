@@ -133,7 +133,6 @@ class InstagramSwapper:
         self.cookies_api = cookies_api
         self.headers_instagram_web = {"User-Agent": "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Safari/537.36", "x-csrftoken": self.cookies_api["csrftoken"], "x-ig-app-id": "936619743392459", "x-instagram-ajax": "0c15f4d7d44a", "x-requested-with": "XMLHttpRequest"}
         self.req_get_info = self.http_request('https://www.instagram.com/accounts/edit/?__a=1', self.headers_instagram_web, False, self.cookies_api, False, True).json()
-        input(self.req_get_info)
         try:
             self.email = self.req_get_info["form_data"]["email"]
         except:
